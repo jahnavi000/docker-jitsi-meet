@@ -5,7 +5,7 @@ steps:
   args: ['cp', 'env.example', '.env']
 
 - name: 'bash'
-  args: ['gen-password.sh']
+  args: ['bash', 'gen-password.sh']
 
 - name: 'bash'
   args: ['echo', 'Starting docker compose up...'] 
