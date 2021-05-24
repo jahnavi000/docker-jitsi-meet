@@ -4,13 +4,13 @@ steps:
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ['cp', 'env.example', '.env']
 
-step:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |
-          ./gen-passwords.sh
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+        ./gen-passwords.sh
 
 - name: 'bash'
   args: ['echo', 'Starting docker compose up...'] 
