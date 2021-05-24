@@ -4,7 +4,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ['cp', 'env.example', '.env']
 
-- name: 'bash'
+- name: 'sh'
   args: ['./gen-passwords.sh']
 
 - name: 'bash'
