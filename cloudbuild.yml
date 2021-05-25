@@ -15,5 +15,29 @@ steps:
 - name: 'bash'
   args: ['echo', 'Starting docker compose up...'] 
 
-- name: 'docker/compose:1.19.0'
-  args: ['build']
+# - name: 'docker/compose:1.19.0'
+#   args: ['build']
+  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/zaanu-82b5a/jitsi/jvb', '.']
+  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/zaanu-82b5a/jitsi/jvb']  
+  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/zaanu-82b5a/jitsi/jicofo', '.']
+  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/PROJECT_ID/jitsi/jicofo']  
+  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/zaanu-82b5a/jitsi/prosody', '.']
+  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/PROJECT_ID/jitsi/prosody']  
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/zaanu-82b5a/jitsi/web', '.']
+  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/PROJECT_ID/jitsi/web']  
