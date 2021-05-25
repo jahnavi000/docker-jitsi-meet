@@ -12,7 +12,7 @@ steps:
   args: ['echo', 'Starting docker compose up...'] 
 
 - name: 'docker/compose:1.19.0'
-  args: ['up']
+  args: ['build', '--pull']
   timeout: 500s
   
 - name: 'gcr.io/cloud-builders/docker'
