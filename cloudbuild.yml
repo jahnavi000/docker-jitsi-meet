@@ -16,23 +16,27 @@ steps:
   timeout: 500s
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'jitsi/jvb:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'jitsi/jvb:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
  
+images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
 
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'jitsi/web:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'jitsi/web:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
 
-
-
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'jitsi/jicofo:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
-
+images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
 
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'jitsi/prosody:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+  args: ['tag', 'jitsi/jicofo:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+
+images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'jitsi/prosody:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
+images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
 
   
   
