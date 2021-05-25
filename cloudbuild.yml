@@ -17,7 +17,10 @@ steps:
   
 - name: 'gcr.io/cloud-builders/docker'
   args: ['tag', 'jitsi/jvb:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
- 
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/jvb:latest']
+
 
 
 - name: 'gcr.io/cloud-builders/docker'
