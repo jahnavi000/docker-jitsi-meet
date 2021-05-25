@@ -19,25 +19,25 @@ steps:
 #   args: ['build']
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/zaanu-82b5a/jitsi/jvb:stable-5870', '.']
+  args: ['build', '-t', 'gcr.io/zaanu-82b5a/jvb', '.']
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/zaanu-82b5a/jitsi/jvb:stable-5870']  
+  args: ['push', 'gcr.io/zaanu-82b5a/jvb']  
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/zaanu-82b5a/jitsi/jicofo:stable-5870', '.']
+  args: ['build', '-t', 'gcr.io/zaanu-82b5a/jicofo', '.']
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/PROJECT_ID/jitsi/jicofo:stable-5870']  
+  args: ['push', 'gcr.io/PROJECT_ID/jicofo']  
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/zaanu-82b5a/jitsi/prosody:stable-5870', '.']
+  args: ['build', '-t', 'gcr.io/zaanu-82b5a/prosody', '.']
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/PROJECT_ID/jitsi/prosody:stable-5870']  
+  args: ['push', 'gcr.io/PROJECT_ID/prosody']  
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/zaanu-82b5a/jitsi/web:stable-5870', '.']
+  args: ['build', '-t', 'gcr.io/zaanu-82b5a/web', '.']
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/PROJECT_ID/jitsi/web:stable-5870']  
+  args: ['push', 'gcr.io/PROJECT_ID/web']  
