@@ -43,6 +43,10 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
   
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['compute', 'instance-groups', 'managed', 'rolling-action', 'restart', 'instance-group-1', '--zone=us-central1-a' ]
+
+  
   
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['build', '-t', 'gcr.io/zaanu-82b5a/jvb','-f','./jvb/','.']
