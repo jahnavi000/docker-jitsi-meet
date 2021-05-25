@@ -17,6 +17,7 @@ steps:
 
 - name: 'docker/compose:1.19.0'
   args: ['build']
+  timeout: 500s
   
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['build', '-t', 'gcr.io/zaanu-82b5a/jvb', '.']
@@ -28,16 +29,16 @@ steps:
 #   args: ['build', '-t', 'gcr.io/zaanu-82b5a/jicofo', '.']
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/PROJECT_ID/jicofo']  
+  args: ['push', 'gcr.io/zaanu-82b5a/jicofo']  
   
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['build', '-t', 'gcr.io/zaanu-82b5a/prosody', '.']
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/PROJECT_ID/prosody']  
+  args: ['push', 'gcr.io/zaanu-82b5a/prosody']  
 
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['build', '-t', 'gcr.io/zaanu-82b5a/web', '.']
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/PROJECT_ID/web']  
+  args: ['push', 'gcr.io/zaanu-82b5a/web']  
