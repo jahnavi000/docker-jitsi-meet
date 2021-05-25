@@ -46,28 +46,3 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['compute', 'instance-groups', 'managed', 'rolling-action', 'restart', 'instance-group-1', '--zone=us-central1-a' ]
 
-  
-  
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '-t', 'gcr.io/zaanu-82b5a/jvb','-f','./jvb/','.']
-  
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'gcr.io/zaanu-82b5a/jvb']  
-  
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '-t', 'gcr.io/zaanu-82b5a/jicofo', '.']
-  
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'gcr.io/zaanu-82b5a/jicofo']  
-  
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '-t', 'gcr.io/zaanu-82b5a/prosody', '.']
-  
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'gcr.io/zaanu-82b5a/prosody']  
-
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '-t', 'gcr.io/zaanu-82b5a/web','-f','/web', '.']
-  
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'gcr.io/zaanu-82b5a/web']  
